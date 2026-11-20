@@ -1,0 +1,27 @@
+=== Normal Fare Tests ===
+Inner Off-Peak -> Rs 10.00
+Inner Peak -> Rs 12.00
+Middle Off-Peak -> Rs 20.00
+Middle Peak -> Rs 24.00
+Outer Off-Peak -> Rs 30.00
+Outer Peak -> Rs 36.00
+
+=== Boundary Tests ===
+Exactly 08:00 -> Rs 36.00
+Exactly 10:00 -> Rs 30.00
+Exactly 17:00 -> Rs 36.00
+Exactly 20:00 -> Rs 30.00
+
+=== Balance Test ===
+Can travel with Rs 60 and Rs 10 fare: true
+
+=== Recharge Test ===
+Negative recharge accepted: false
+
+=== Five Journey Test ===
+Journey 1 = Rs 10.00
+Journey 2 = Rs 36.00
+Journey 3 = Rs 20.00
+Journey 4 = Rs 24.00
+Journey 5 = Rs 30.00
+Total = Rs 120.00
