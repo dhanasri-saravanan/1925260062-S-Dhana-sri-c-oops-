@@ -1,0 +1,27 @@
+Stack object:
+Constructor: 3 x 4
+
+Seat Map:
+X O O O 
+O O X O 
+O O O X 
+
+After cancellation:
+
+Seat Map:
+X O O O 
+O O O O 
+O O O X 
+Destructor: 2 seat(s) booked
+
+Heap object:
+Constructor: 2 x 5
+
+Seat Map:
+O X O O O 
+O O O O X 
+Destructor: 2 seat(s) booked
+
+Zero-row event:
+Constructor: 0 x 10
+Destructor: 0 seat(s) booked
