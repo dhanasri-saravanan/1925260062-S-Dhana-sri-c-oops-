@@ -1,0 +1,55 @@
+#include <iostream>
+
+constexpr long long MIN_BALANCE_PAISE = 5000;
+
+bool canTravel(long long balance, long long fare)
+{
+    return balance - fare >= MIN_BALANCE_PAISE;
+}
+
+bool deduct(long long& balance, long long fare)
+{
+    if (!canTravel(balance, fare))
+    {
+        return false;
+    }
+
+    balance -= fare;
+    return true;
+}
+
+long long calculateFare(long long baseFare, bool peak)
+{
+    if (peak)
+    {
+        baseFare += baseFare * 20 / 100;
+    }
+
+    return baseFare;
+}
+
+int main()
+{
+    long long balance = 10000;
+
+    long long fare1 =
+        calculateFare(1000, false);
+
+    long long fare2 =
+        calculateFare(3000, true);
+
+    if (deduct(balance, fare1))
+    {
+        std::cout << "Journey 1 accepted\n";
+    }
+
+    if (deduct(balance, fare2))
+    {
+        std::cout << "Journey 2 accepted\n";
+    }
+
+    std::cout << "Balance = "
+              << balance << " paise\n";
+
+    return 0;
+}
