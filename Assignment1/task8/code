@@ -1,0 +1,54 @@
+#include <iomanip>
+#include <iostream>
+#include <limits>
+
+int main()
+{
+    int hour;
+
+    std::cout << "Enter journey hour (0-23): ";
+
+    while (true)
+    {
+        std::cin >> hour;
+
+        if (!std::cin.fail() &&
+            hour >= 0 &&
+            hour <= 23)
+        {
+            break;
+        }
+
+        std::cout
+            << "Invalid input. Enter a number "
+               "between 0 and 23: ";
+
+        std::cin.clear();
+
+        std::cin.ignore(
+            std::numeric_limits<
+                std::streamsize>::max(),
+            '\n');
+    }
+
+    long long farePaise = 3600;
+
+    std::cout << "\nJourney Report\n";
+    std::cout << "---------------\n";
+
+    std::cout
+        << "Hour : "
+        << hour << '\n';
+
+    std::cout
+        << "Fare : Rs "
+        << farePaise / 100
+        << '.'
+        << std::setw(2)
+        << std::setfill('0')
+        << farePaise % 100
+        << std::setfill(' ')
+        << '\n';
+
+    return 0;
+}
