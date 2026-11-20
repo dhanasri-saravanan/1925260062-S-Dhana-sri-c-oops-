@@ -1,0 +1,4 @@
+Passenger: Student
+Fare: Rs 36.00
+Journey accepted
+Remaining balance: Rs 64
