@@ -1,0 +1,12 @@
+Original marks:
+72 91 84 88 
+
+After moderation:
+72 93 84 88 
+
+Highest by value: 93
+After index modification: 94
+After pointer modification: 95
+
+Reference before vector growth: 30
+Vector size after growth: 4
