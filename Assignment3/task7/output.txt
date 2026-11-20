@@ -1,0 +1,19 @@
+Resistor:   100.0000 + 0.0000j
+Inductor:   0.0000 + 31.4159j
+Capacitor:  0.0000 - 31.8310j
+
+Series RLC impedance:
+100.0000 - 0.4151j
+Magnitude: 100.0009
+
+Parallel RLC impedance:
+99.8280 + 4.1435j
+Magnitude: 99.9140
+
+Operator tests:
+x + y = 4.0000 + 6.0000j
+x - y = 2.0000 + 2.0000j
+x * y = -5.0000 + 10.0000j
+x / y = 2.2000 - 0.4000j
+x == y: false
+Division test: Division by zero complex number
