@@ -1,0 +1,12 @@
+Initial time: 0:59:59
+a after t++: 0:59:59
+t after t++: 1:00:00
+b after ++t: 1:00:01
+t after ++t: 1:00:01
+a == b: false
+a < b: true
+
+Playlist:
+Song A
+Song B
+Song C
