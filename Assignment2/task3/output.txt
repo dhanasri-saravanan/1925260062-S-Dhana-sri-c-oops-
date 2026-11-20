@@ -1,0 +1,18 @@
+Call 1:
+charge(int grams)
+
+Call 2:
+charge(double kg, bool, bool)
+
+Call 3:
+charge(double kg, bool, bool)
+
+Call 4:
+charge(double kg, bool, bool)
+
+Call 5:
+charge(double kg, bool, bool)
+
+Call 6:
+charge(Parcel)
+charge(double kg, bool, bool)
