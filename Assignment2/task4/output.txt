@@ -1,0 +1,15 @@
+----------------------
+Account Number: 1001
+Balance: 7200
+Transactions:
+1000 -500 2000 -300 
+----------------------
+
+After more transactions:
+
+----------------------
+Account Number: 1001
+Balance: 12700
+Transactions:
+100 200 300 400 500 600 700 800 900 1000 
+----------------------
