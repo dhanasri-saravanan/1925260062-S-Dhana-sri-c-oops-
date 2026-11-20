@@ -1,0 +1,28 @@
+Data type sizes:
+bool      : 1 byte(s)
+char      : 1 byte(s)
+int       : 4 byte(s)
+long long : 8 byte(s)
+unsigned  : 4 byte(s)
+float     : 4 byte(s)
+double    : 8 byte(s)
+
+Values:
+peak = 1
+grade = A
+hour = 8
+balance = 100000 paise
+zone = 2
+percentage = 20
+rupees = 36
+journeys = 3000000
+
+Integer ranges:
+INT_MIN = -2147483648
+INT_MAX = 2147483647
+LLONG_MIN = -9223372036854775808
+LLONG_MAX = 9223372036854775807
+
+Mixed-type expressions:
+7 / 2 = 3
+static_cast<double>(7) / 2 = 3.5
