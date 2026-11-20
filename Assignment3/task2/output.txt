@@ -1,0 +1,5 @@
+Copy constructor called
+Copy assignment called
+Ibuprofen ORS | Paracetamol Cetirizine | Paracetamol ORS
+Copy assignment called
+After self-assignment: Ibuprofen ORS
