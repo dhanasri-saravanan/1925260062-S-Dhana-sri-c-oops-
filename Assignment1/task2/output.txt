@@ -1,0 +1,3 @@
+Base fare = Rs 20.0
+Peak surcharge = 20%
+Minimum balance = Rs 50
