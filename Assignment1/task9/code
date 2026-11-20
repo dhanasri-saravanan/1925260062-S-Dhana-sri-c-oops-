@@ -1,0 +1,215 @@
+#include <iostream>
+#include <string>
+
+enum class Zone
+{
+    Inner,
+    Middle,
+    Outer
+};
+
+constexpr long long MIN_BALANCE_PAISE = 5000;
+
+long long baseFare(Zone zone)
+{
+    switch (zone)
+    {
+        case Zone::Inner:
+            return 1000;
+
+        case Zone::Middle:
+            return 2000;
+
+        case Zone::Outer:
+            return 3000;
+    }
+
+    return 0;
+}
+
+bool isPeak(int hour)
+{
+    return (hour >= 8 && hour < 10) ||
+           (hour >= 17 && hour < 20);
+}
+
+long long calculateFare(
+    Zone zone,
+    int hour)
+{
+    long long fare = baseFare(zone);
+
+    if (isPeak(hour))
+    {
+        fare += fare * 20 / 100;
+    }
+
+    return fare;
+}
+
+bool canTravel(
+    long long balance,
+    long long fare)
+{
+    return balance - fare >=
+           MIN_BALANCE_PAISE;
+}
+
+bool recharge(
+    long long& balance,
+    long long amount)
+{
+    if (amount < 0)
+    {
+        return false;
+    }
+
+    balance += amount;
+    return true;
+}
+
+void testFare(
+    const std::string& name,
+    Zone zone,
+    int hour)
+{
+    long long fare =
+        calculateFare(zone, hour);
+
+    std::cout
+        << name
+        << " -> Rs "
+        << fare / 100
+        << '.'
+        << (fare % 100 < 10 ? "0" : "")
+        << fare % 100
+        << '\n';
+}
+
+int main()
+{
+    std::cout << "=== Normal Fare Tests ===\n";
+
+    testFare(
+        "Inner Off-Peak",
+        Zone::Inner,
+        12);
+
+    testFare(
+        "Inner Peak",
+        Zone::Inner,
+        8);
+
+    testFare(
+        "Middle Off-Peak",
+        Zone::Middle,
+        12);
+
+    testFare(
+        "Middle Peak",
+        Zone::Middle,
+        18);
+
+    testFare(
+        "Outer Off-Peak",
+        Zone::Outer,
+        12);
+
+    testFare(
+        "Outer Peak",
+        Zone::Outer,
+        18);
+
+    std::cout << "\n=== Boundary Tests ===\n";
+
+    testFare(
+        "Exactly 08:00",
+        Zone::Outer,
+        8);
+
+    testFare(
+        "Exactly 10:00",
+        Zone::Outer,
+        10);
+
+    testFare(
+        "Exactly 17:00",
+        Zone::Outer,
+        17);
+
+    testFare(
+        "Exactly 20:00",
+        Zone::Outer,
+        20);
+
+    std::cout << "\n=== Balance Test ===\n";
+
+    long long balance = 6000;
+    long long fare = 1000;
+
+    std::cout
+        << "Can travel with Rs 60 and "
+           "Rs 10 fare: "
+        << std::boolalpha
+        << canTravel(balance, fare)
+        << '\n';
+
+    std::cout << "\n=== Recharge Test ===\n";
+
+    long long cardBalance = 10000;
+
+    std::cout
+        << "Negative recharge accepted: "
+        << recharge(cardBalance, -1000)
+        << '\n';
+
+    std::cout << "\n=== Five Journey Test ===\n";
+
+    Zone zones[] =
+    {
+        Zone::Inner,
+        Zone::Outer,
+        Zone::Middle,
+        Zone::Middle,
+        Zone::Outer
+    };
+
+    int hours[] =
+    {
+        12,
+        18,
+        12,
+        18,
+        12
+    };
+
+    long long total = 0;
+
+    for (int i = 0; i < 5; ++i)
+    {
+        long long f =
+            calculateFare(zones[i], hours[i]);
+
+        total += f;
+
+        std::cout
+            << "Journey "
+            << i + 1
+            << " = Rs "
+            << f / 100
+            << '.'
+            << (f % 100 < 10 ? "0" : "")
+            << f % 100
+            << '\n';
+    }
+
+    std::cout
+        << "Total = Rs "
+        << total / 100
+        << '.'
+        << (total % 100 < 10 ? "0" : "")
+        << total % 100
+        << '\n';
+
+    return 0;
+}
