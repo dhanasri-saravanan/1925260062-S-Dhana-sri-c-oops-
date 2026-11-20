@@ -1,0 +1,6 @@
+Enter journey hour (0-23): 12
+
+Journey Report
+---------------
+Hour : 12
+Fare : Rs 36.00
