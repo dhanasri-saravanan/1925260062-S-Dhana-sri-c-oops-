@@ -1,0 +1,7 @@
+Initial history:
+Transactions: 100 200 300 400 500 
+
+After adding 600 and 700:
+Transactions: 300 400 500 600 700 
+
+Number of transactions: 5
