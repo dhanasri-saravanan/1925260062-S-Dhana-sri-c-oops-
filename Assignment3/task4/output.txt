@@ -1,0 +1,5 @@
+Rs 200.00
+true
+75 paise + 50 paise = Rs 1.25
+50 - 75 = -Rs 25.00
+After += : Rs 125.50
